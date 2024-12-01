@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.Ship.ShipSearch.form.ShipSearchForm;
 import com.example.demo.Ship.ShipSearch.mapper.ShipSearchMapper;
-import com.example.demo.model.ShipSearchModel;
+import com.example.demo.model.SHP_SPM_SC_Ship_Model;
 
 @Service
 public class ShipSearchServiceimpl implements ShipSearchService {
@@ -15,7 +15,7 @@ public class ShipSearchServiceimpl implements ShipSearchService {
 	private ShipSearchMapper shipSearchMapper;
 	
 	@Override
-	public List<ShipSearchModel> getShipSearch(ShipSearchForm form) {
+	public List<SHP_SPM_SC_Ship_Model> getShipSearch(ShipSearchForm form) {
 		return shipSearchMapper.getShipSearch(form);
 	}
 	

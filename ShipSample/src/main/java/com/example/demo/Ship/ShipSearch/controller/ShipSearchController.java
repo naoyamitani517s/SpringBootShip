@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.example.demo.Ship.ShipSearch.form.ShipSearchForm;
 import com.example.demo.Ship.ShipSearch.service.ShipSearchService;
-import com.example.demo.model.ShipSearchModel;
+import com.example.demo.model.SHP_SPM_SC_Ship_Model;
 
 
 @Controller
@@ -30,7 +30,7 @@ public class ShipSearchController {
     @PostMapping("/index")
     private String doPost(ShipSearchForm shipSearchForm, Model model) {
     	shipSearchForm.preparreDBSearchData();
-    	List<ShipSearchModel> shipList = shipSearchService.getShipSearch(shipSearchForm);
+    	List<SHP_SPM_SC_Ship_Model> shipList = shipSearchService.getShipSearch(shipSearchForm);
     	
     	shipSearchForm = modelmapper.map(shipList, ShipSearchForm.class);
     	model.addAttribute("shipList", shipList);
