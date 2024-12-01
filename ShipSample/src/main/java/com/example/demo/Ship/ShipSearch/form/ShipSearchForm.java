@@ -1,7 +1,6 @@
 package com.example.demo.Ship.ShipSearch.form;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import lombok.Data;
 
@@ -30,34 +29,4 @@ public class ShipSearchForm {
 	private int logicalDelete;  	      // 論理削除表示 含
 	private int ownerchangekbn;           // オーナー変更 有
 	
-	public void preparreDBSearchData() {
-		// 重量 From(HTML取得内容)をint型に変更
-		if (!(this.grosstonnageFrom == null || this.grosstonnageFrom.equals(""))) {
-			for (char c: this.grosstonnageFrom.toCharArray()) {
-				if (!Character.isDigit(c)) {
-					this.grosstonnageFrom = "";
-					break;
-				}
-			}
-			this.grossTonnageFromByInt = Integer.parseInt(grosstonnageFrom);
-		}
-		// 重量 To(HTML取得内容)をint型に変更
-		if (!(this.grosstonnageTo == null || this.grosstonnageTo.equals(""))) {
-			for (char c: this.grosstonnageTo.toCharArray()) {
-				if (!Character.isDigit(c)) {
-					this.grosstonnageTo = "";
-					break;
-				}
-			}
-			this.grossTonnageToByInt = Integer.parseInt(grosstonnageTo);
-		}
-		// 建造年月日 From(HTML取得内容)をLocalDate型に変更
-		this.buildDateFromByDate = (this.builddateFrom == null || this.builddateFrom.equals(""))
-				? null
-				: LocalDate.parse(this.builddateFrom, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-		// 建造年月日 To(HTML取得内容)をLocalDate型に変更
-		this.buildDateToByDate = (this.builddateTo == null || this.builddateTo.equals(""))
-				? null
-				: LocalDate.parse(this.builddateTo, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-	}
 }

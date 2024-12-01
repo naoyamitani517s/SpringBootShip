@@ -1,6 +1,6 @@
 package com.example.demo.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
@@ -70,7 +70,7 @@ public class SHP_SPM_SC_Ship_Model {
 	public int grosstonnage;
 	
 	@Column(name="builddate")
-	public Date builddate;
+	public LocalDate builddate;
 	
 	@Column(name="projectno")
 	public int projectno;
@@ -160,7 +160,7 @@ public class SHP_SPM_SC_Ship_Model {
 	public int recordid;
 	
 	@Column(name="recordtimestamp")
-	public Date recordtimestamp;
+	public LocalDate recordtimestamp;
 	
 	@Column(name="shipfishingdatakbn")
 	public String shipfishingdatakbn;
@@ -187,13 +187,13 @@ public class SHP_SPM_SC_Ship_Model {
 	public String owermanagement_manual_bk;
 	
 	@Column(name="ownermanagement_lastupd_date")
-	public Date ownermanagement_lastupd_date;
+	public LocalDate ownermanagement_lastupd_date;
 	
 	@Column(name="ownermanagementlastupd_user")
 	public String ownermanagementlastupd_user;
 	
 	@Column(name="ownercustomer_lastupd_date")
-	public Date ownercustomer_lastupd_date;
+	public LocalDate ownercustomer_lastupd_date;
 	
 	@Column(name="ownercustomer_lastupd_user")
 	public String ownercustomer_lastupd_user;
@@ -211,10 +211,10 @@ public class SHP_SPM_SC_Ship_Model {
 	public String ins_user;
 	
 	@Column(name="upd_date")
-	public Date upd_date;
+	public LocalDate upd_date;
 	
 	@Column(name="ins_date")
-	public Date ins_date;
+	public LocalDate ins_date;
 	
 
 }

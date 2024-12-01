@@ -16,7 +16,7 @@ public class ShipSearchServiceimpl implements ShipSearchService {
 	
 	@Override
 	public List<SHP_SPM_SC_Ship_Model> getShipSearch(ShipSearchForm form) {
-		return shipSearchMapper.getShipSearch(form);
+		return shipSearchMapper.ShipSearch(form);
 	}
 	
 

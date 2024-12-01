@@ -9,5 +9,5 @@ import com.example.demo.model.SHP_SPM_SC_Ship_Model;
 
 @Mapper
 public interface ShipSearchMapper {
-	public List<SHP_SPM_SC_Ship_Model> getShipSearch(ShipSearchForm form); 
+	public List<SHP_SPM_SC_Ship_Model> ShipSearch(ShipSearchForm form); 
 }
