@@ -16,7 +16,7 @@ import com.example.demo.model.SHP_SPM_SC_Ship_Model;
 
 
 @RestController
-@CrossOrigin(origins = "http://127.0.0.1:3000")
+@CrossOrigin(origins = "http://192.168.11.9:3000")
 @RequestMapping("/Ship")
 public class ShipSearchController {
 	

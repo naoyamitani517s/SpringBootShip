@@ -11,22 +11,61 @@
 			grosstonnage, imono, builddate, f_shipno, registeredowner
 		FROM
 			shp_spm_sc_ship
-		WHERE
-			shipyardcode = #{shipyardcode} OR
-			shipnumber = #{shipnumber} OR
-			customercode = #{customercode} OR
-			series = #{series} OR
-			shipnameen = #{shipnameen} OR
-			furunorescompany = #{furunorescompany} OR
-			shipspecies = #{shipspecies} OR
-			shipnationality = #{shipnationality} OR
-			shipclass = #{shipclass} OR
-			shiptype = #{shiptype} OR
-			grosstonnage = #{grosstonnage} OR
-			imono = #{imono} OR
-			builddate = #{builddate} OR
-			f_shipno = #{f_shipno} OR
-			registeredowner = #{registeredowner}
+		<where>
+		    <if test="shipyardcode != null">
+                AND shipyardcode = #{shipyardcode}
+            </if>
+            <if test="shipnumber != null">
+                AND shipnumber = #{shipnumber}
+            </if>
+            <if test="customercode != null">
+                AND customercode = #{customercode}
+            </if>
+            <if test="series != null">
+                AND series = #{series}
+            </if>
+            <if test="shipnameen != null">
+                AND shipnameen = #{shipnameen}
+            </if>
+            <if test="furunorescompany != null">
+                AND furunorescompany = #{furunorescompany}
+            </if>
+            <if test="shipspecies != null">
+                AND shipspecies = #{shipspecies}
+            </if>
+            <if test="shipnationality != null">
+                AND shipnationality = #{shipnationality}
+            </if>
+            <if test="shipclass != null">
+                AND shipclass = #{shipclass}
+            </if>
+            <if test="shiptype != null">
+                AND shiptype = #{shiptype}
+            </if>
+            <!-- 総トン数 (from-to) の条件 -->
+            <if test="grossTonnageFromByInt != 0">
+                AND grosstonnage >= #{grossTonnageFromByInt}
+            </if>
+            <if test="grossTonnageToByInt != 0">
+                AND grosstonnage &lt;= #{grossTonnageToByInt}
+            </if>
+            <!-- 建造年月日 (from-to) の条件 -->
+            <if test="buildDateFromByDate != null">
+                AND builddate >= #{buildDateFromByDate}
+            </if>
+            <if test="buildDateToByDate != null">
+                AND builddate &lt;= #{buildDateToByDate}
+            </if>
+            <if test="imono != null">
+                AND imono = #{imono}
+            </if>
+            <if test="f_shipno != null">
+                AND f_shipno = #{f_shipno}
+            </if>
+            <if test="registeredowner != null">
+                AND registeredowner = #{registeredowner}
+            </if>
+    	</where>
 	</select>
 </mapper>
 

@@ -14,7 +14,7 @@ public class APIConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**") // `/api/**` のパスに CORS を適用
-                        .allowedOrigins("http://127.0.0.1:3000") // Next.js のオリジン
+                        .allowedOrigins("http://192.168.11.9:3000") // Next.js のオリジン
                         .allowedMethods("GET", "POST", "PUT", "DELETE") // 許可する HTTP メソッド
                         .allowedHeaders("*") // 許可するヘッダー
                         .allowCredentials(true); // Cookie を許可する場合
