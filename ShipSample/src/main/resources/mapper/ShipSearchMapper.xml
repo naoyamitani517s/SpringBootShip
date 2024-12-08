@@ -2,5 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.demo.Ship.ShipSearch.mapper.ShipSearchMapper">
+
+	<select id="ShipSearch" resultType="com.example.demo.model.SHP_SPM_SC_Ship_Model">
+	
+		SELECT
+			shipyardcode, shipnumber, customercode, series, shipnameen, furunorescompany, 
+			shipspecies, shipnationality, shipclass, shiptype,
+			grosstonnage, imono, builddate, f_shipno, registeredowner
+		FROM
+			shp_spm_sc_ship
+		WHERE
+			shipyardcode = #{shipyardcode} OR
+			shipnumber = #{shipnumber} OR
+			customercode = #{customercode} OR
+			series = #{series} OR
+			shipnameen = #{shipnameen} OR
+			furunorescompany = #{furunorescompany} OR
+			shipspecies = #{shipspecies} OR
+			shipnationality = #{shipnationality} OR
+			shipclass = #{shipclass} OR
+			shiptype = #{shiptype} OR
+			grosstonnage = #{grosstonnage} OR
+			imono = #{imono} OR
+			builddate = #{builddate} OR
+			f_shipno = #{f_shipno} OR
+			registeredowner = #{registeredowner}
+	</select>
 </mapper>
 
